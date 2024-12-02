@@ -1,0 +1,3 @@
+/Users/chazcisneros/CLionProjects/FinalProject_2/cmake-build-debug/CMakeFiles/FINALPROJECT.dir
+/Users/chazcisneros/CLionProjects/FinalProject_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/chazcisneros/CLionProjects/FinalProject_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
