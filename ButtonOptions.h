@@ -8,8 +8,8 @@ using namespace std;
 #include "CreateListing.h"
 #include "PrintListings.h"
 #include "SearchListings.h"
+#include "ReadWriteSave.h"
 #include <iostream>
-#include <fstream>
 
 void RecordListings(vector<Listing> &propertyLists);
 void ButtonOptions(char menuChar, vector<Listing> &propertyLists);

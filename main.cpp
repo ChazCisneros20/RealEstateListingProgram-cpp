@@ -1,9 +1,11 @@
 #include "MainMenu.h"
 #include "ButtonOptions.h"
+#include "ReadWriteSave.h"
 #include <iostream>
 using namespace std;
 int main() {
     vector<Listing> propertyLists;
+    ReadListings(propertyLists);
     char buttonChar;
     bool haveMoreOperation = MainMenu(buttonChar);
     while (haveMoreOperation){

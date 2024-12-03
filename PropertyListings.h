@@ -30,6 +30,7 @@ class Listing
             cout << squareFootage << " ";
             cout << askingPrice << " " << endl;
         }
+
 };
 
 

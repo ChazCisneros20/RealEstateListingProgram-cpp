@@ -113,6 +113,10 @@ void CreateListing(vector<Listing> &propertyLists)
 
     propertyLists.push_back(currList);
 
+    std::cout << "You've created an extra listing of: " << "\n" << endl;
+
+    currList.print();
+
     /*
     std::cout << "Would you like to make another property listing? " << std::endl << std::endl;
     std::cout << "Enter:  " << std::endl;

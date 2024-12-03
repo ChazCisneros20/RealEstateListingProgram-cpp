@@ -85,6 +85,12 @@ build CMakeFiles/FINALPROJECT.dir/SearchListings.cpp.o: CXX_COMPILER__FINALPROJE
   OBJECT_DIR = CMakeFiles/FINALPROJECT.dir
   OBJECT_FILE_DIR = CMakeFiles/FINALPROJECT.dir
 
+build CMakeFiles/FINALPROJECT.dir/ReadWriteSave.cpp.o: CXX_COMPILER__FINALPROJECT_unscanned_Debug /Users/chazcisneros/CLionProjects/FinalProject_2/ReadWriteSave.cpp || cmake_object_order_depends_target_FINALPROJECT
+  DEP_FILE = CMakeFiles/FINALPROJECT.dir/ReadWriteSave.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/FINALPROJECT.dir
+  OBJECT_FILE_DIR = CMakeFiles/FINALPROJECT.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target FINALPROJECT
@@ -93,7 +99,7 @@ build CMakeFiles/FINALPROJECT.dir/SearchListings.cpp.o: CXX_COMPILER__FINALPROJE
 #############################################
 # Link the executable FINALPROJECT
 
-build FINALPROJECT: CXX_EXECUTABLE_LINKER__FINALPROJECT_Debug CMakeFiles/FINALPROJECT.dir/main.cpp.o CMakeFiles/FINALPROJECT.dir/MainMenu.cpp.o CMakeFiles/FINALPROJECT.dir/CreateListing.cpp.o CMakeFiles/FINALPROJECT.dir/PrintListings.cpp.o CMakeFiles/FINALPROJECT.dir/ButtonOptions.cpp.o CMakeFiles/FINALPROJECT.dir/SearchListings.cpp.o
+build FINALPROJECT: CXX_EXECUTABLE_LINKER__FINALPROJECT_Debug CMakeFiles/FINALPROJECT.dir/main.cpp.o CMakeFiles/FINALPROJECT.dir/MainMenu.cpp.o CMakeFiles/FINALPROJECT.dir/CreateListing.cpp.o CMakeFiles/FINALPROJECT.dir/PrintListings.cpp.o CMakeFiles/FINALPROJECT.dir/ButtonOptions.cpp.o CMakeFiles/FINALPROJECT.dir/SearchListings.cpp.o CMakeFiles/FINALPROJECT.dir/ReadWriteSave.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/FINALPROJECT.dir
   POST_BUILD = :
