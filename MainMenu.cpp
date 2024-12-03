@@ -33,7 +33,7 @@ bool PressCheck(char menuChar)
 
     if (menuChar == 'c' || menuChar == 'p' ||
         menuChar == 's' || menuChar == 'r' ||
-        menuChar == 'e')
+        menuChar == 'd' || menuChar == 'e')
     {
         return true;
 
@@ -53,7 +53,8 @@ void PrintMenu()
     cout << "c/C to create a property listing" << endl
          << "p/P to print all property listings" << endl
          << "s/S to search all property listings" << endl
-         << "r/R to record all property listings" << endl
+         << "r/R to save all changes you've made (record property listings)" << endl
+         << "d/D to erase save file's property listings" << endl
          << "e/E to exit" << endl;
 }
 

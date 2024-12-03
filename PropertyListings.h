@@ -1,6 +1,7 @@
 #ifndef FINALPROJECT_PROPERTYLISTINGS_H
 #define FINALPROJECT_PROPERTYLISTINGS_H
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 class Listing
@@ -28,7 +29,27 @@ class Listing
             cout << bathRooms << " ";
             cout << propertyType << " ";
             cout << squareFootage << " ";
-            cout << askingPrice << " " << endl;
+            cout << askingPrice << " " << endl << endl;
+        }
+
+        string singleLine()
+        {
+            stringstream ss;
+            string returnLine;
+            ss << streetNum << " "
+             << streetName << " "
+             << streetCity << " "
+             << state << " "
+             << zipCode << " "
+             << bedRooms << " "
+             << bathRooms << " "
+             << propertyType << " "
+             << squareFootage << " "
+             << askingPrice << " " << endl;
+
+            getline(ss, returnLine);
+
+            return returnLine;
         }
 
 };

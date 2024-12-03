@@ -18,6 +18,9 @@ void ButtonOptions(char menuChar, vector<Listing> &propertyLists)
         case 'r':
             RecordListings(propertyLists);
             break;
+        case 'd':
+            DeleteListings();
+            break;
         default :
             break;
     }

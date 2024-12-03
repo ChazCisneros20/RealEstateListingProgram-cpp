@@ -1,8 +1,5 @@
 #include "ReadWriteSave.h"
 #include <iostream>
-#include <vector>
-#include <fstream>
-#include <sstream>
 using namespace std;
 
 void ReadListings(vector<Listing> &propertylists)
@@ -17,13 +14,14 @@ void ReadListings(vector<Listing> &propertylists)
     {
         inFS.close();
         cout << "Error. Unable to locate save file. \n" << endl;
+
     }
     else
     {
         cout << "Loading save file" << endl;
 
+        getline(inFS, readLine);
         while (!inFS.eof()) {
-            getline(inFS, readLine);
             stringstream ss(readLine);
 
             ss >> currListing.streetNum;
@@ -58,7 +56,11 @@ void RecordListings(vector<Listing> &propertyLists)
     cout << "Saving to file \"listing_records.txt\" ..." << "\n" << endl;
 
     if (!outFS.is_open()){
+        outFS.close();
         cout << "Error!!! Cannot open file!" << endl;
+
+
+
     }
     else {
         for (const Listing& tempListings : propertyLists)
@@ -83,5 +85,76 @@ void RecordListings(vector<Listing> &propertyLists)
     }
 
     cout << "Returning to main menu." << "\n" << endl;
+
+}
+
+void DeleteListings()
+{
+    fstream file_stream("listing_records.txt");
+
+
+    if (!file_stream.is_open())
+    {
+        cout << "Error!!! Cannot open file!" << endl;
+        cout << "ERROR AT LINE 102" << endl;
+        file_stream.close();
+
+    }
+    else
+    {
+        vector<string> lineContainer;
+        string recLine;
+        int line_number;
+        while(getline(file_stream, recLine))
+        {
+            lineContainer.push_back(recLine);
+        }
+
+        cout << "Enter which listing number you would like to delete: \n" << endl;
+
+        cin >> line_number;
+
+        if (line_number > lineContainer.size())
+        {
+            cout << "Line " << line_number << " does not exist in the file." << endl;
+            (line_number == 1) ?
+            (cout << "The save file has only " << lineContainer.size() << " line.\n" << endl)
+            :
+            (cout << "The save file has only " << lineContainer.size() << " lines.\n" << endl);
+
+            file_stream.close();
+        }
+        else{
+            ofstream outFS;
+
+            outFS.open("listing_records.txt");
+
+            if (!outFS.is_open() || outFS.fail())
+            {
+                cout << "Error!!! Cannot open file!" << endl;
+                cout << "ERROR AT LINE 137" << endl;
+                outFS.close();
+
+            }
+            else
+            {
+                for (int i = 0; i < lineContainer.size(); i++)
+                {
+                    if (i != line_number)
+                    {
+                        outFS << lineContainer.at(i) << endl;
+                    }
+                    else
+                    {
+                        outFS << "" << endl;
+                    }
+                }
+                outFS.close();
+            }
+        }
+
+        file_stream.close();
+
+    }
 
 }

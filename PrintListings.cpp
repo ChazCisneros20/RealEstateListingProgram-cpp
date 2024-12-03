@@ -12,7 +12,9 @@ void PrintListings(vector<Listing> &propertyLists)
 
     for (int i = 0; i < propertyLists.size(); i++)
     {
+        cout << i + 1 << "). ";
         propertyLists.at(i).print();
 
     }
+    cout << endl;
 }

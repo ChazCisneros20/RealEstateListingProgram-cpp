@@ -1,13 +1,9 @@
 #include "SearchListings.h"
-#include <fstream>
 #include <iostream>
-
-void SearchCityStateZip();
-void SearchThreshold(vector<Listing> &propertyLists);
 
 void SearchListings(vector<Listing> &propertyLists) {
     // Create a variable that user inputs as a "findSubstr" and if the loop encounters it, then print it;
-    char findSubstr;
+    int findSubstr;
 
     cout << "Search Menu: Press: " << endl << endl;
 
@@ -20,7 +16,7 @@ void SearchListings(vector<Listing> &propertyLists) {
 
     if (findSubstr > 0 && findSubstr < 4)
     {
-        SearchCityStateZip();
+        SearchCityStateZip(propertyLists);
     }
     else
     {
@@ -29,35 +25,44 @@ void SearchListings(vector<Listing> &propertyLists) {
 
 }
 //"listing_records.txt"
-void SearchCityStateZip()
+void SearchCityStateZip(vector<Listing>& propertyLists)
 {
     string keyWord;
     string lineCheck;
+    vector<string> listCheckList;
 
-    cout << "Find listings in a selected city, state, or zipcode: " << endl << endl;
-
+    cout << "Find listings in a selected city, state, or zipcode: " << endl;
     cout << "Type in a city name, a state, or a zipcode" << endl << endl;
-
     cin >> keyWord;
 
-    ifstream inFS;
+    listCheckList = ListingToString(propertyLists);
 
-    inFS.open("listing_records.txt");
-
-    if (!inFS.is_open())
+    for (int i = 0; i < listCheckList.size(); i++)
     {
-        cout << "Could not locate save file.. " << endl;
-    }
-
-    getline(inFS, lineCheck);
-
-    while (!inFS.eof())
-    {
-        if (lineCheck.find(keyWord) != string::npos) {
-            cout << lineCheck << "\n" << endl;
+        string tempString = listCheckList.at(i);
+        if (tempString.find(keyWord) != string::npos)
+        {
+            cout << i + 1 << "). " << tempString << endl;
         }
-    }
 
+    }
+    cout << endl;
+
+
+}
+
+vector<string> ListingToString(vector<Listing>& propertyLists)
+{
+    string tempLine;
+    vector<string> listingVector;
+
+    for (int i = 0; i < propertyLists.size(); i++)
+    {
+        tempLine = propertyLists.at(i).singleLine();
+        listingVector.push_back(tempLine);
+
+    }
+    return listingVector;
 }
 
 void SearchThreshold(vector<Listing> &propertyLists)

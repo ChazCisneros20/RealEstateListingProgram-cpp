@@ -117,13 +117,6 @@ void CreateListing(vector<Listing> &propertyLists)
 
     currList.print();
 
-    /*
-    std::cout << "Would you like to make another property listing? " << std::endl << std::endl;
-    std::cout << "Enter:  " << std::endl;
-    std::cout << "    " << "\"y/Y\" to create another property listing" << std::endl;
-    std::cout << "    " << "\"e/E\" to return to main menu" << std::endl;
 
-    std::cin >> repeatCreation;
-     */
 
 }
